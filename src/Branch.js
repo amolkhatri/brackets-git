@@ -137,7 +137,7 @@ define(function (require, exports) {
                 .show();
 
         Main.gitControl.getRepositoryRoot().then(function (root) {
-             if(root) {
+            if (root) {
                 Main.gitControl.getBranchName().then(function (branchName) {
                     $gitBranchName.text(branchName)
                         .off("click")
