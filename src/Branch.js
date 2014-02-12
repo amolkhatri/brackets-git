@@ -152,10 +152,6 @@ define(function (require, exports) {
                         ErrorHandler.showError(ex, "Could not read branch name");
                     }
                 });
-            } else {
-                // Current working folder is not a git root
-                $gitBranchName.text("not a git repo").off("click");
-                Panel.disable("not-repo");
             }
         }).fail(function () {
             // current working folder is not a git repository, hide branch info
