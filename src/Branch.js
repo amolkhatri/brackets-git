@@ -137,7 +137,7 @@ define(function (require, exports) {
                 .show();
 
         Main.gitControl.getRepositoryRoot().then(function (root) {
-            if (root === Main.getProjectRoot()) {
+             if(root) {
                 Main.gitControl.getBranchName().then(function (branchName) {
                     $gitBranchName.text(branchName)
                         .off("click")
@@ -154,8 +154,8 @@ define(function (require, exports) {
                 });
             } else {
                 // Current working folder is not a git root
-                $gitBranchName.text("not a git root").off("click");
-                Panel.disable("not-root");
+                $gitBranchName.text("not a git repo").off("click");
+                Panel.disable("not-repo");
             }
         }).fail(function () {
             // current working folder is not a git repository, hide branch info
